@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Service.Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Service.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8701/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Service.Entitys" />
+  <xs:complexType name="Authorization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Authorization" nillable="true" type="tns:Authorization" />
+  <xs:complexType name="Registration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numbers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Registration" nillable="true" type="tns:Registration" />
+  <xs:complexType name="OrderFood">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numbers" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service.Entitys" minOccurs="0" name="products" nillable="true" type="q1:ArrayOfProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderFood" nillable="true" type="tns:OrderFood" />
+</xs:schema>
